@@ -44,3 +44,7 @@ Com a complexidade ciclomática de 3, existem 3 caminhos lineares independentes.
 **Caminho 3:**
 1 → 2 → 8 → 9
 (Erro na execução)
+
+## Grafo:
+![Grafo](https://github.com/user-attachments/assets/76815bfe-eea6-48e6-a2a8-f16bbe81a105)
+
