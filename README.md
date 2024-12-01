@@ -1,29 +1,46 @@
 # Projeto: Erros de Conexão com Banco de Dados
 
-## Descrição
-Este projeto apresenta um código Java que realiza a conexão com um banco de dados MySQL e verifica usuários com base em login e senha.
+Nodos principais:
+1. Início do método.
+2. Conexão com o banco de dados.
+3. Construção da query SQL.
+4. Execução da query.
+5. Condição: Usuário existe?
+6. Retorno de sucesso (usuário encontrado).
+7. Retorno de falha (usuário não encontrado).
+8. Tratamento de exceção.
+9. Fim do método.
 
-## Objetivo
-Analisar o código para identificar possíveis erros e más práticas de programação.
+## Cálculo da Complexidade Ciclomática
+A complexidade ciclomática é calculada com a fórmula:
 
-## Erros Identificados
-1. **Tratamento de Exceções Insuficiente**  
-   - Os blocos `catch` não possuem mensagens ou ações que facilitem o diagnóstico de problemas.
 
-2. **Vulnerabilidade de Injeção de SQL**  
-   - A concatenação de strings para construir queries SQL é vulnerável a ataques de injeção de SQL.
+M=E−N+2
 
-3. **Gerenciamento de Recursos**  
-   - O objeto `Connection` não é fechado após o uso, causando vazamento de recursos.
+E (Arestas): Número de arestas (fluxos entre os nodos).
+N (Nodos): Número de nodos (pontos no grafo).
 
-4. **Classe do Driver Obsoleta**  
-   - O código usa `com.mysql.Driver`, que está obsoleto em versões modernas do MySQL Connector.
+**Cálculo**
+Contar o número de arestas no grafo:
+Exemplo: 10 arestas.
+Contar o número de nodos:
+Exemplo: 9 nodos.
 
-5. **Credenciais Hardcoded**  
-   - As credenciais do banco estão no código, comprometendo a segurança.
+Substituir na fórmula:
 
-6. **Ausência de Validação da Conexão**  
-   - Não há verificação para confirmar que a conexão foi estabelecida antes de executar a query.
+𝑀 = 10 − 9 + 2 = 3
 
-7. **Nome da Classe Confuso**  
-   - O nome `User` pode causar confusão, já que é um nome comum para classes de modelo.
+## Base de Caminhos
+Com a complexidade ciclomática de 3, existem 3 caminhos lineares independentes. Identifique-os com base no grafo de fluxo:
+
+**Caminho 1:**
+1 → 2 → 3 → 4 → 5 → 6 → 9
+(Usuário encontrado com sucesso)
+
+**Caminho 2:**
+1 → 2 → 3 → 4 → 5 → 7 → 9
+(Usuário não encontrado)
+
+**Caminho 3:**
+1 → 2 → 8 → 9
+(Erro na execução)
